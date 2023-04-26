@@ -30,6 +30,7 @@ class App
 
         Debug.WriteLine(navigator.GetClosestCountry("Australia"));
         Debug.WriteLine(navigator.GetClosestCountry("Rwanda"));
+        Debug.WriteLine(navigator.GetClosestCountry("France"));
 
         Debug.WriteLine(navigator.GetClosestCapitalCity("Australia", "Perth"));
         Debug.WriteLine(navigator.GetClosestCapitalCity("France", "Lyon"));

@@ -19,16 +19,10 @@ namespace WorldNavigation
             return City.cities_by_country[country_name].Where(city => city.type == "admin" || city.type == "primary").ToList();
         }
 
-        public City? GetCapitalCity(string country_name)
+        public City GetCapitalCity(string country_name)
         {
             List<City> cities = City.cities_by_country[country_name];
-            foreach (City city in cities)
-            {
-                if (city.type == "primary")
-                    return city;
-            }
-
-            return null;
+            return cities.Where(city => city.type == "primary").First();
         }
 
         public Tuple<City, double> GetClosestCapitalCity(string country_name, string city_name)
