@@ -6,3 +6,12 @@ This repo is designed to provide an example of how the .NET Core xUnit unit test
 The code base is a small world navigation library which allows the user to filter location data about world countries, and major cities. Think of it as a poor-man's Google Maps.
 
 There is no API or documentation for the library as it is used as an example to elucidate the potential of the xUnit library. If you are interested in exploring the functionality of the code base, look no further than the **navigator.cs** file for a list of methods (functionality is implied in the method names).
+
+#### Run Options
+To write your own code within the project without copying the code base, modify the **Main.cs** file in the **App** directory.
+
+To run the unit tests, either use Visual Studio and the Test Explorer window, or navigate to the project root directory in a shell on your machine and run:
+
+```Bash
+dotnet test
+```
