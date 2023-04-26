@@ -1,5 +1,6 @@
 ﻿using WorldNavigation;
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 
 class App
 {
@@ -37,6 +38,7 @@ class App
         Debug.WriteLine(navigator.GetCapitalCity("Greenland"));
         Debug.WriteLine(navigator.GetClosestCapitalCity("Germany", "Nuremberg"));
 
+        Debug.WriteLine(navigator.GetClosestCountry("Nigeria"));
     }
 
     public static void print_cities(List<City> lst)

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using WorldNavigation;
 namespace UnitTests;
 
@@ -26,21 +27,39 @@ public static class CountryTests
     {
         Assert.Equal(expected, navigator.GetCapitalCity(country).name);
     }
+
+    [Theory]
+    [ClassData(typeof(DistanceBetweenCountriesTestData))]
+    internal static void GetClosestCountry_SomeCountry_Within50km(string country, double expected)
+    {
+        double distance = navigator.GetClosestCountry(country).Item2;
+        Assert.InRange(Math.Abs(distance - expected), -25, 25);
+    }
 }
 
 public class ClosestCountryTestData : DataTemplate<string, string>
 {
     public ClosestCountryTestData() : base(
-        new string[] { "Australia", "France", "Rwanda" },
-        new string[] { "Timor-Leste", "Andorra", "Burundi" })
+        Data("Australia", "France", "Rwanda"),
+        Data("Timor-Leste", "Andorra", "Burundi")
+        )
     { }
 }
 
 public class GetCapitalCityTestData : DataTemplate<string, string>
 {
     public GetCapitalCityTestData() : base(
-        New("Australia", "France", "Indonesia"),
-        New("Canberra", "Paris", "Jakarta")
+        Data("Australia", "France", "Indonesia"),
+        Data("Canberra", "Paris", "Jakarta")
+        )
+    { }
+}
+
+public class DistanceBetweenCountriesTestData : DataTemplate<string, double>
+{
+    public DistanceBetweenCountriesTestData() : base(
+        Data("Australia", "France", "Nigeria"),
+        Data(2019.0, 426.0, 450.0)
         )
     { }
 }
