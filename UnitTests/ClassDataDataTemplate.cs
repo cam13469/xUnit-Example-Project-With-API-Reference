@@ -2,7 +2,6 @@
 
 namespace UnitTests
 {
-   
     public class DataTemplate<T, U> : IEnumerable<object[]>
     {
         public List<Tuple<T, U>> _Data = new List<Tuple<T, U>>();
@@ -35,5 +34,4 @@ namespace UnitTests
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }   
-
 }
