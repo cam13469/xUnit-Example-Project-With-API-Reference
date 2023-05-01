@@ -16,7 +16,7 @@ public static class CountryTests
 
     [Theory]
     [ClassData(typeof(ClosestCountryTestData))]
-    internal static void GetClosestCountry_SomeCountry_Verified(string country, string expected)
+    internal static void GetClosestCountry_SomeCountry_IsClosestCountry(string country, string expected)
     {
         Assert.Equal(expected, navigator.GetClosestCountry(country).Item1.name);
     }
