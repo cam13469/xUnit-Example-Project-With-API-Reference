@@ -9,6 +9,7 @@ namespace WorldNavigation
         public static Dictionary<int, City> cities_by_id = new Dictionary<int, City>();
         public static Dictionary<string, List<City>> cities_by_name = new Dictionary<string, List<City>>();
         public static Dictionary<string, List<City>> cities_by_country = new Dictionary<string, List<City>>();
+        public static bool WasInstanced = false;
 
         public string name;
         public Tuple<double, double> location;
@@ -60,6 +61,8 @@ namespace WorldNavigation
     {
         public static void CreateCityData()
         {
+            City.WasInstanced = true;
+
             using (var reader = new StreamReader(@"C:\Users\cam13469\Documents\Project - Unit Testing\WorldNavigation\WorldNavigation\WorldData\city_data.csv"))
             {
                 var header = reader.ReadLine();

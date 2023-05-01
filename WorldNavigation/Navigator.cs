@@ -5,8 +5,10 @@ namespace WorldNavigation
     {
         public Navigator()
         {
-            CountryData.CreateCountryData();
-            CityData.CreateCityData();
+            if (!Country.WasInstanced)
+                CountryData.CreateCountryData();
+            if (!City.WasInstanced)
+                CityData.CreateCityData();
         }
 
         public List<City> GetCities(string country_name)

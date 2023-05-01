@@ -39,6 +39,8 @@ class App
         Debug.WriteLine(navigator.GetClosestCapitalCity("Germany", "Nuremberg"));
 
         Debug.WriteLine(navigator.GetClosestCountry("Nigeria"));
+
+        print_cities(navigator.GetMajorCities("Australia"));
     }
 
     public static void print_cities(List<City> lst)

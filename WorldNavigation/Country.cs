@@ -6,6 +6,7 @@ namespace WorldNavigation
     public class Country
     {
         public static Dictionary<string, Country> countries_by_name = new Dictionary<string, Country>();
+        public static bool WasInstanced = false;
 
         public string name;
         public Tuple<double, double> location;
@@ -36,6 +37,7 @@ namespace WorldNavigation
     {
         public static void CreateCountryData()
         {
+            Country.WasInstanced = true;
             using (var reader = new StreamReader(@"C:\Users\cam13469\Documents\Project - Unit Testing\WorldNavigation\WorldNavigation\WorldData\country_data.csv"))
             {
                 var header = reader.ReadLine();

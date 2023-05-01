@@ -37,7 +37,7 @@ public static class CountryTests
     }
 }
 
-public class ClosestCountryTestData : DataTemplate<string, string>
+public class ClosestCountryTestData : ClassDataTemplate<string, string>
 {
     public ClosestCountryTestData() : base(
         Data("Australia", "France", "Rwanda"),
@@ -46,7 +46,7 @@ public class ClosestCountryTestData : DataTemplate<string, string>
     { }
 }
 
-public class GetCapitalCityTestData : DataTemplate<string, string>
+public class GetCapitalCityTestData : ClassDataTemplate<string, string>
 {
     public GetCapitalCityTestData() : base(
         Data("Australia", "France", "Indonesia"),
@@ -55,7 +55,7 @@ public class GetCapitalCityTestData : DataTemplate<string, string>
     { }
 }
 
-public class DistanceBetweenCountriesTestData : DataTemplate<string, double>
+public class DistanceBetweenCountriesTestData : ClassDataTemplate<string, double>
 {
     public DistanceBetweenCountriesTestData() : base(
         Data("Australia", "France", "Nigeria"),

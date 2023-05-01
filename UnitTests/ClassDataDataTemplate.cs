@@ -2,11 +2,11 @@
 
 namespace UnitTests
 {
-    public class DataTemplate<T, U> : IEnumerable<object[]>
+    public class ClassDataTemplate<T, U> : IEnumerable<object[]>
     {
         public List<Tuple<T, U>> _Data = new List<Tuple<T, U>>();
 
-        public DataTemplate(T[] data, U[] expectedOuts)
+        public ClassDataTemplate(T[] data, U[] expectedOuts)
         {
             if (data.Length != expectedOuts.Length)
             {
