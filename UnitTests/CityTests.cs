@@ -7,6 +7,11 @@ public static class CityTests
 {
     internal static Navigator navigator = new();
 
+    /// <summary>
+    /// Tests that the GetMajorCities() method identifies all of the correct major cities of the given island countries
+    /// </summary>
+    /// <param name="country">The name of an island country</param>
+    /// <param name="cities">The expected array of major city names</param>
     [Theory]
     [MemberData(nameof(MajorCitiesTestData.Islands), MemberType = typeof(MajorCitiesTestData))]
     internal static void GetMajorCities_Island_ArrayMajorCities(string country, string[] cities)
