@@ -19,9 +19,13 @@ public static class CityTests
         string[] names = (from c in navigator.GetMajorCities(country) select c.name).ToArray();
         Assert.True(cities.All(names.Contains));
         
+        Assert.Raises
     }
 }
 
+/// <summary>
+/// Set of data to test Major City related methods
+/// </summary>
 public static class MajorCitiesTestData
 {
     public static IEnumerable<object[]> Islands()
